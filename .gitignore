@@ -1,0 +1,36 @@
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+
+# Executable files
+*.exe
+*.out
+*.app
+
+# Shared object files
+*.so
+*.dll
+*.dylib
+
+# Precompiled headers
+*.gch
+*.pch
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# Temporary files
+*.tmp
+*~
+
+.vscode
+
