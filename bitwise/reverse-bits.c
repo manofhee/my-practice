@@ -41,5 +41,6 @@ int main()
 {
     uint64_t x = 0x505;
     // int i = 1, j = 6;
-    printf("x(0x%llx): 0x%llx\n", x, Reverse_lookup(x));
+    printf("brute: x(0x%llx): 0x%llx\n", x, Reverse(x));
+    printf("lookup: x(0x%llx): 0x%llx\n", x, Reverse_lookup(x));
 }

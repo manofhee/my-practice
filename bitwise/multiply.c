@@ -12,7 +12,6 @@ uint64_t Add(uint64_t a, uint64_t b) {
     return a;
 }
 
-
 uint64_t Multiply(uint64_t x, uint64_t y) {
     uint64_t sum = 0;
     while (x) {
@@ -34,11 +33,8 @@ uint64_t Multiply_bruteforce(uint64_t x, uint64_t y) {
     return sum;
 }
 
-
-int main()
-{
+int main() {
     uint64_t x = 10, y=66;
-    // int i = 1, j = 6;
     printf("brute: x(%llu),y(%llu): %llu\n", x, y, Multiply_bruteforce(x, y));
     printf("shift: x(%llu),y(%llu): %llu\n", x, y, Multiply(x, y));
 }
