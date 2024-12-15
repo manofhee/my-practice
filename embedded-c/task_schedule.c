@@ -1,41 +1,41 @@
-sem_t sem_1;
-sem_t sem_2;
+#include <stdlib.h>
 
-void* task1(void* arg) {
+sem_t sem0, sem1;
+
+void* task0(void* arg) {
     while (1) {
-        sem_wait(&sem_1);
-        printf("ping\n"); // do work
-        sem_post(&sem_2);
-        sleep(2); // do other work
+        sem_wait(sem0);
+        printf("ping\n");
+        sem_post(sem1);
+        sleep(1);
     }
     return NULL;
 }
 
-void* task2(void* arg) {
+void* task1(void* arg) {
     while (1) {
-        sem_wait(&sem_2);
-        printf("pong\n"); // do work
-        sem_post(&sem_1);
-        sleep(2);
+        sem_wait(sem1);
+        printf("pong\n");
+        sem_post(sem0);
+        sleep(1);
     }
     return NULL;
 }
 
 int main() {
-    sem_init(&sem_1, 1);
-    sem_init(&sem_2, 0);
+    sem_init(&sem0, 1);
+    sem_init(&sem1, 0);
 
-    pthread_t thread1, thread2;
+    pthread_t th0, th1;
 
-    pthread_create(&thread1, task1);
-    pthread_create(&thread2, task2);
+    thread_create(&th0, task0);
+    thread_create(&th1, task1);
 
-    pthread_join(thread1);
-    pthread_join(thread2);
+    thread_join(&th0);
+    thread_join(&th1);
 
-    sem_destroy(&sem_1);
-    sem_destroy(&sem_2);
+    sem_destroy(sem0);
+    sem_destroy(sem1);
 
     return 0;
 }
-
