@@ -1,0 +1,6 @@
+2025-01-01T12:00:00 INFO Start of task: Task1
+2025-01-01T12:05:00 INFO End of task: Task1
+2025-01-01T12:10:00 INFO Start of task: Task2
+2025-01-01T12:20:00 INFO End of task: Task2
+2025-01-01T12:30:00 INFO Start of task: Task1
+2025-01-01T12:45:00 INFO End of task: Task1
